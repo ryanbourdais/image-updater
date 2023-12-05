@@ -7,7 +7,7 @@ from pathlib import Path
 
 #Configuration
 api_org = "ryanbourdais-test-org" #The organization you'll be scanning.
-api_key="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" #Personal Access Token
+api_key="" #Personal Access Token
 new_branch_name="ImageUpdates" #Make sure this is unique.
 
 #If any of the configuration elements up top are not filled in, ask for them here.
