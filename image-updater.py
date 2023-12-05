@@ -109,9 +109,11 @@ for r in repos:
             for i in deprecated_images:
                 if i == old_image:
                     image_family = old_image.split(":")[0]
-                    image = input("\n deprecated image '" + old_image + "' found, specify new tag (if you would like default press enter):")
-                    if image == "":
+                    image_tag = input("\n deprecated image '" + old_image + "' found, specify new tag (if you would like default press enter):")
+                    if image_tag == "":
                         image = image_family + ":default"
+                    else:
+                        image = image_family + image_tag
          
             #If the resource variable matches the Resource we started with, no change was made - otherwise, one was made.
             if (image != old_image and image != ""):
