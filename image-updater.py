@@ -62,7 +62,7 @@ def repo_scan(repo):
         print("No .circleci/config.yml file found.")
         return False
 
-#Determine if there are any macos entries at all.
+#Determine if there are any machine entries at all.
 def machine_check(config: str):
     if config.find("machine:") > -1:
         return True
@@ -94,8 +94,8 @@ for r in repos:
     for attr, value in result_yaml['jobs'].items():
         if "machine" in value:
 
-            ## The resource class can be present under macos, or on the same depth tas it, so we need to account for both.
-            ## We first check for the same depth, then, we check under macos.
+            ## The image name can be present under machines, or on the same depth as it, so we need to account for both.
+            ## We first check for the same depth, then, we check under image.
             depth = 0
             if "image" in value:
                 old_image = value["image"]
